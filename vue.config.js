@@ -8,6 +8,18 @@ module.exports = defineConfig({
   transpileDependencies: true,
   // configureWebpack: {} webpack配置
   configureWebpack: {
+    devServer: {
+      port: 8080,
+      proxy: {
+        '/api': {
+          target: 'http://codercba.com:5000',
+          pathRewrite: {
+            '^/api': ''
+          },
+          changeOrigin: true
+        }
+      }
+    },
     plugins: [
       AutoImport({
         resolvers: [ElementPlusResolver()]

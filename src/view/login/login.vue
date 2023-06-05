@@ -23,7 +23,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../../assets/images/login-bg.svg');
+  background-image: url('@/assets/images/login-bg.svg');
   height: 100%;
   width: 100%;
 }

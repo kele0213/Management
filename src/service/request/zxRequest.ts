@@ -34,32 +34,32 @@ export default class ZxRequest {
             text: '正在加载中...'
           })
         }
-        console.log('公共-请求成功拦截')
+        // console.log('公共-请求成功拦截')
         return config
       },
       (err) => {
-        console.log('公共-请求失败拦截')
+        // console.log('公共-请求失败拦截')
         return err
       }
     )
     this.instance.interceptors.response.use(
       (res) => {
-        console.log('公共-获取成功拦截')
+        // console.log('公共-获取成功拦截')
         const data = res.data
         // 关闭加载中,延迟两秒
         setTimeout(() => {
           this.loading?.close()
-        }, 2000)
+        }, 1000)
 
         // 服务器请求成功了，但请求的数据为空，实际请求失败
-        if (data.returnCode === 'FALSE') {
-          console.log('请求失败')
-        }
+        // if (data.returnCode === 'FALSE') {
+        //   console.log('请求失败')
+        // }
 
         return data
       },
       (err) => {
-        console.log('公共-获取失败拦截')
+        // console.log('公共-获取失败拦截')
 
         // 这里可以对40x 50x等错误信息进行拦截
         switch (err.response.status) {
