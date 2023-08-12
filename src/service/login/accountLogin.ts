@@ -1,5 +1,6 @@
 import zxRequest from '@/service'
-import type { IAccount, ILogin, ILoginData } from './loginType'
+import type { IAccount, ILoginData } from './loginType'
+import type { IDate } from '../types'
 
 enum URL {
   LOGIN = '/login', //登录
@@ -8,7 +9,7 @@ enum URL {
 }
 
 export function accountLoginRequest(account: IAccount) {
-  return zxRequest.post<ILogin<ILoginData>>({
+  return zxRequest.post<IDate<ILoginData>>({
     url: URL.LOGIN,
     data: {
       name: account.username,
@@ -18,14 +19,14 @@ export function accountLoginRequest(account: IAccount) {
 }
 
 export function userInfoRequest(id: number) {
-  return zxRequest.get<ILogin>({
+  return zxRequest.get<IDate>({
     url: URL.USER + id,
     isLoading: false
   })
 }
 
 export function menuRequest(id: number) {
-  return zxRequest.get<ILogin>({
+  return zxRequest.get<IDate>({
     url: URL.MENU + id + '/menu',
     isLoading: false
   })

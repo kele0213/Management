@@ -9,7 +9,7 @@ const zxRequest = new ZxRequest({
     requestSuccessInterceptor(config) {
       const token = localCache.getCache('token')
       if (token) {
-        config.headers.Authorization = token
+        config.headers.Authorization = `Bearer ${token}`
       }
       // console.log('单个实例——成功请求拦截')
       return config

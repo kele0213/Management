@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h2>Main</h2>
-  </div>
+  <div>Page Not Found</div>
 </template>
 
 <script lang="ts">

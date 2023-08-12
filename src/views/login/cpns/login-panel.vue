@@ -5,7 +5,9 @@
       <el-tab-pane name="account">
         <template #label>
           <span class="custom-tabs-label">
-            <el-icon size="12px"><User /></el-icon>
+            <el-icon size="12px">
+              <User />
+            </el-icon>
             <span>用户登录</span>
           </span>
         </template>
